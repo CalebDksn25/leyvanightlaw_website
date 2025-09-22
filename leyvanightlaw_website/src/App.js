@@ -7,6 +7,7 @@ import Contact from "../src/pages/contact/Contact.jsx";
 import Location from "../src/pages/location/Location.jsx";
 import Services from "../src/pages/services/Services.jsx";
 import Testimonials from "../src/pages/testimonials/Testimonials.jsx";
+import Benifits from "../src/pages/benifits/Benifits.jsx";
 import "./App.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/locations" element={<Location />} />
         <Route path="/services" element={<Services />} />
         <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/benefits" element={<Benifits />} />
       </Routes>
     </BrowserRouter>
   );

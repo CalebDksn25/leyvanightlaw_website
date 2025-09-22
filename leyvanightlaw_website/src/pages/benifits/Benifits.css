@@ -1,0 +1,118 @@
+/* Page base to match testimonials dark theme */
+.benefits-page {
+  color: white;
+  background-color: #121212;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.benefits-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.benefits-header p {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-bottom: 0;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.benefit-image-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 60%; /* 5:3 aspect ratio */
+  background: #0f0f0f;
+}
+
+.benefit-image-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ae8231;
+}
+
+.benefit-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ensure full image is visible */
+  object-position: center;
+  background: transparent;
+}
+
+.benefit-content {
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.benefit-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.benefit-description {
+  font-size: 1rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .benefits-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .benefits-header h1 {
+    font-size: 2rem;
+  }
+
+  .benefits-header p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefit-title {
+    font-size: 1.1rem;
+  }
+
+  .benefit-description {
+    font-size: 0.95rem;
+  }
+}

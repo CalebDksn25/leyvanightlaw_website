@@ -5,10 +5,10 @@ const Location = () => {
   const offices = [
     {
       id: 1,
-      name: "Los Angeles Office",
-      addressLine1: "1234 Wilshire Blvd, Suite 500",
-      addressLine2: "Los Angeles, CA 90017",
-      phone: "(213) 000-0000",
+      name: "Beverly Blvd Office",
+      addressLine1: "2632 W. Beverly Blvd",
+      addressLine2: "2632 W. Beverly Blvd, Montebello, CA 90640",
+      phone: "(323) 278-7000",
       hours: "Mon–Fri: 9:00 AM – 5:00 PM",
       mapsLink:
         "https://www.google.com/maps/search/?api=1&query=1234+Wilshire+Blvd+Suite+500+Los+Angeles+CA+90017",
@@ -16,9 +16,9 @@ const Location = () => {
     {
       id: 2,
       name: "Santa Ana Office",
-      addressLine1: "5678 Main St, Suite 210",
-      addressLine2: "Santa Ana, CA 92701",
-      phone: "(714) 000-0000",
+      addressLine1: "1043 W. Civic Ctr. Dr, Suite 200",
+      addressLine2: "1043 W. Civic Ctr. Dr, #200, Santa Ana, CA 92703",
+      phone: "(714) 565-2760",
       hours: "Mon–Fri: 9:00 AM – 5:00 PM",
       mapsLink:
         "https://www.google.com/maps/search/?api=1&query=5678+Main+St+Suite+210+Santa+Ana+CA+92701",
@@ -26,19 +26,19 @@ const Location = () => {
     {
       id: 3,
       name: "Riverside Office",
-      addressLine1: "3456 Market St, Suite 300",
-      addressLine2: "Riverside, CA 92501",
-      phone: "(951) 000-0000",
+      addressLine1: "Riverside, CA 92501",
+      addressLine2: "",
+      phone: "(951) 689-8000",
       hours: "Mon–Fri: 9:00 AM – 5:00 PM",
       mapsLink:
         "https://www.google.com/maps/search/?api=1&query=3456+Market+St+Suite+300+Riverside+CA+92501",
     },
     {
       id: 4,
-      name: "Montebello Office",
-      addressLine1: "7890 Beverly Blvd, Suite 120",
-      addressLine2: "Montebello, CA 90640",
-      phone: "(323) 000-0000",
+      name: "Hollywood Office",
+      addressLine1: "North Hollywood, CA 91602",
+      addressLine2: "",
+      phone: "(818) 755-5040",
       hours: "Mon–Fri: 9:00 AM – 5:00 PM",
       mapsLink:
         "https://www.google.com/maps/search/?api=1&query=7890+Beverly+Blvd+Suite+120+Montebello+CA+90640",
