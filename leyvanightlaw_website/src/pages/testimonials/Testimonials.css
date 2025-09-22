@@ -97,7 +97,7 @@
 }
 
 .upload-review-section {
-  background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
   border-radius: 16px;
   padding: 3rem 2rem;
   text-align: center;
@@ -167,6 +167,7 @@
 
   .testimonial-card {
     padding: 1.5rem;
+    background-color: #282c34;
   }
 
   .testimonial-header {
@@ -177,6 +178,7 @@
 
   .upload-review-section {
     padding: 2rem 1rem;
+    background-color: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
   }
 
   .upload-review-content h2 {

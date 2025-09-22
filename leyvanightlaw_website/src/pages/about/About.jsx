@@ -47,7 +47,7 @@ const About = () => {
   return (
     <div className="about-page">
       <h1>Our Team Workers' compensation and personal injury team</h1>
-      <p className="about-intro">Learn more about Leyva Night Law.</p>
+      {/* <p className="about-intro">Learn more about Leyva Night Law.</p> */}
 
       <div className="team-cards-container">
         {teamMembers.map((member, index) => (
@@ -71,6 +71,61 @@ const About = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Practice Areas Section */}
+      <div className="practice-areas-section">
+        <h2>Practice Areas</h2>
+        <div className="practice-areas-grid">
+          <div className="practice-area-item">Workers' Compensation</div>
+          <div className="practice-area-item">Personal Injury</div>
+          <div className="practice-area-item">Workplace Harassment</div>
+          <div className="practice-area-item">Wrongful Death</div>
+          <div className="practice-area-item">Civil Settlements</div>
+          <div className="practice-area-item">Wrongful Termination</div>
+          <div className="practice-area-item">Auto Accident</div>
+          <div className="practice-area-item">Wage and Hour Claims</div>
+        </div>
+      </div>
+
+      {/* Side-by-side sections */}
+      <div className="side-by-side-sections">
+        {/* Our Approach Section */}
+        <div className="our-approach-section">
+          <h2 className="our-approach-section-title">Our Approach</h2>
+          <p>
+            At Leyva & Night, APC, we bring the law to your corner. We are
+            dedicated to understand what results you want and to help you
+            understand what actions we can take on your behalf. We will work
+            with you every step of the way to make sure that you understand the
+            choices you are making and feel empowered to make them.
+          </p>
+        </div>
+
+        {/* A Team in Your Corner Section */}
+        <div className="team-corner-section">
+          <h2 className="our-approach-section-title">A Team in Your Corner</h2>
+          <p>
+            No matter who you go within our firm, the expertise of the whole
+            team weighs in on your case.
+          </p>
+        </div>
+      </div>
+
+      {/* Legacy of Success Section */}
+      <div className="legacy-section">
+        <h2>Legacy of Success</h2>
+        <p>
+          Leyva & Night, APC has been working together for over 30 years and has
+          a proven track record of success. We use that experience to help you
+          down a path to the results you need. Schedule your free phone
+          consultation today.
+        </p>
+        <div className="cta-button">
+          <a href="/contact" className="consultation-btn">
+            Schedule Free Consultation
+          </a>
+        </div>
       </div>
     </div>
   );

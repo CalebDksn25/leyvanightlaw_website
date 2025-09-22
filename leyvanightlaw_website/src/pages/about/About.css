@@ -127,6 +127,168 @@
   transform: translateY(0);
 }
 
+/* Practice Areas Section */
+.practice-areas-section {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.practice-areas-section h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.practice-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.practice-area-item {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.practice-area-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ae8231;
+  border-radius: 8px 8px 0 0;
+}
+
+.practice-area-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: #ae8231;
+}
+
+/* Side-by-side sections container */
+.side-by-side-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 60px 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Our Approach Section */
+.our-approach-section {
+  text-align: left;
+}
+
+.our-approach-section h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.our-approach-section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+/* Team Corner Section */
+.team-corner-section {
+  text-align: center;
+}
+
+.team-corner-section h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.our-approach-section-title {
+  border-bottom: 2px solid #ae8231;
+}
+
+.team-corner-section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+/* Legacy Section */
+.legacy-section {
+  margin: 60px 0;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  /*background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);*/
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  border: 1px solid #333333;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.legacy-section h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.legacy-section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  margin-top: 2rem;
+}
+
+.consultation-btn {
+  display: inline-block;
+  background: #ae8231;
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(174, 130, 49, 0.35);
+  border: none;
+  cursor: pointer;
+}
+
+.consultation-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(174, 130, 49, 0.45);
+  background: #9b732c;
+  color: white;
+  text-decoration: none;
+}
+
+.consultation-btn:active {
+  transform: translateY(0);
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .team-cards-container {
@@ -140,5 +302,40 @@
 
   .card-content {
     padding: 20px;
+  }
+
+  .practice-areas-section h2,
+  .our-approach-section h2,
+  .team-corner-section h2,
+  .legacy-section h2 {
+    font-size: 2rem;
+  }
+
+  .side-by-side-sections {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 40px 0;
+  }
+
+  .practice-areas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .our-approach-section,
+  .team-corner-section,
+  .legacy-section {
+    margin: 40px 0;
+    padding: 0 1rem;
+  }
+
+  .legacy-section {
+    padding: 2rem 1rem;
+  }
+
+  .our-approach-section p,
+  .team-corner-section p,
+  .legacy-section p {
+    font-size: 1rem;
   }
 }

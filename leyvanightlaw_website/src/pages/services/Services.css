@@ -47,7 +47,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #4a90e2, #7b68ee, #ff6b6b);
+  background: #ae8231;
 }
 
 .service-card:hover {
@@ -93,7 +93,7 @@
 
 .contact-us-btn {
   display: block;
-  background: linear-gradient(135deg, #4a90e2 0%, #7b68ee 100%);
+  background: #ae8231;
   color: white;
   text-decoration: none;
   padding: 15px 30px;
@@ -103,15 +103,15 @@
   font-weight: 600;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 4px 16px rgba(174, 130, 49, 0.35);
   border: none;
   cursor: pointer;
 }
 
 .contact-us-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
-  background: linear-gradient(135deg, #5ba0f2 0%, #8b78fe 100%);
+  box-shadow: 0 6px 20px rgba(174, 130, 49, 0.45);
+  background: #9b732c;
   color: white;
   text-decoration: none;
 }
