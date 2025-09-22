@@ -1,0 +1,147 @@
+/* Page */
+.location-page {
+  color: white;
+  background-color: #121212;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.location-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.location-header h1 {
+  font-size: 45px;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.location-header p {
+  font-size: 18px;
+  color: #cccccc;
+  margin-bottom: 0;
+}
+
+/* Grid */
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card */
+.location-card {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333333;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4a90e2, #7b68ee, #ff6b6b);
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.office-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.75rem 0;
+}
+
+.office-details {
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.office-address span {
+  display: block;
+}
+
+.office-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: #bdbdbd;
+}
+
+.office-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4a90e2 0%, #7b68ee 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(74, 144, 226, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+  background: linear-gradient(135deg, #5ba0f2 0%, #8b78fe 100%);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #4a90e2;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(74, 144, 226, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .location-header h1 {
+    font-size: 32px;
+  }
+
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* On large screens, ensure 3 columns and center the 4th card on row 2 */
+@media (min-width: 1100px) {
+  .locations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .location-card:nth-child(4) {
+    grid-column: 2;
+  }
+}
