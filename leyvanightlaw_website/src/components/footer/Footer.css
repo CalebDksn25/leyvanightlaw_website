@@ -1,0 +1,69 @@
+.site-footer {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
+  border-top: 1px solid #1a1a1a;
+  color: #e6e6e6;
+  padding: 26px 0;
+}
+
+.footer__container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer__brand {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+}
+.footer__logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+.footer__name {
+  font-weight: 700;
+}
+.footer__tag {
+  color: #cfcfcf;
+  font-size: 14px;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer__link {
+  color: #e7cb86;
+  text-decoration: none;
+}
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+.footer__contact {
+  display: grid;
+  gap: 6px;
+  justify-items: end;
+}
+.footer__phone {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer__phone:hover {
+  text-decoration: underline;
+}
+.footer__copy {
+  color: #bdbdbd;
+  font-size: 13px;
+}
+
+@media (min-width: 820px) {
+  .footer__container {
+    grid-template-columns: 1fr auto auto;
+  }
+}

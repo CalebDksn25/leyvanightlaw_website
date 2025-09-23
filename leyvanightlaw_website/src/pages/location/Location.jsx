@@ -6,7 +6,7 @@ const Location = () => {
     {
       id: 1,
       name: "Beverly Blvd Office",
-      addressLine1: "2632 W. Beverly Blvd",
+      //addressLine1: "2632 W. Beverly Blvd",
       addressLine2: "2632 W. Beverly Blvd, Montebello, CA 90640",
       phone: "(323) 278-7000",
       hours: "Mon–Fri: 9:00 AM – 5:00 PM",
@@ -16,7 +16,7 @@ const Location = () => {
     {
       id: 2,
       name: "Santa Ana Office",
-      addressLine1: "1043 W. Civic Ctr. Dr, Suite 200",
+      //addressLine1: "1043 W. Civic Ctr. Dr, Suite 200",
       addressLine2: "1043 W. Civic Ctr. Dr, #200, Santa Ana, CA 92703",
       phone: "(714) 565-2760",
       hours: "Mon–Fri: 9:00 AM – 5:00 PM",

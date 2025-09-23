@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../src/components/home/Home.jsx";
 import Header from "../src/components/header/Header.jsx";
+import Footer from "../src/components/footer/Footer.jsx";
 import About from "../src/pages/about/About.jsx";
 import Contact from "../src/pages/contact/Contact.jsx";
 import Location from "../src/pages/location/Location.jsx";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/benefits" element={<Benifits />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
