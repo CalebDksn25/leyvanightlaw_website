@@ -7,6 +7,7 @@ import wrongTermination from "../../assets/wrongfulterm.webp";
 import imgHarassment from "../../assets/workplace2.webp";
 import heroAlt from "../../assets/leyva4.webp";
 import { testimonials as testimonialsData } from "../../pages/testimonials/data";
+import leyvaLogo from "../../assets/leyvalogo2.jpg";
 
 const Home = () => {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
@@ -233,6 +234,37 @@ const Home = () => {
             <Link to="/services" className="btn btn--ghost">
               View Our Services
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="hero-final" aria-label="Final call to action">
+        <div className="hero-final__bg">
+          <div className="hero-final__gradient hero-final__gradient--left"></div>
+          <div className="hero-final__gradient hero-final__gradient--right"></div>
+        </div>
+
+        <div className="container hero-final__content">
+          <div className="hero-final__block">
+            <div className="hero-final__image-container">
+              <img
+                className="hero-final__image"
+                src={leyvaLogo}
+                alt="Leyva & Night APC professional team"
+              />
+            </div>
+
+            <div className="hero-final__cta">
+              <h2>Put Over 25 Years Of Knowledge On Your Side</h2>
+              <p>
+                Our staff members are fluent in Spanish and we will ensure that
+                you receive all available benefits and are not cleared to return
+                to work before you are able.
+              </p>
+              <Link to="/contact" className="btn btn--final">
+                Start Today
+              </Link>
+            </div>
           </div>
         </div>
       </section>

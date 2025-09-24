@@ -333,3 +333,134 @@
     align-items: start;
   }
 }
+
+/* Hero final section */
+.hero-final {
+  position: relative;
+  min-height: 70vh;
+  overflow: hidden;
+}
+
+.hero-final__bg {
+  position: absolute;
+  inset: 0;
+  background: #0f0f0f;
+}
+
+.hero-final__gradient {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-final__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 40px 0;
+}
+
+.hero-final__block {
+  background: #f8f9fa;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.hero-final__image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-final__image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-final__cta {
+  padding: 40px;
+  color: #333;
+}
+
+.hero-final__cta h2 {
+  margin: 0 0 20px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.hero-final__cta p {
+  margin: 0 0 30px;
+  color: #555;
+  line-height: 1.6;
+  font-size: 16px;
+  text-align: center;
+}
+
+.btn--final {
+  background: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+  padding: 14px 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.btn--final:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .hero-final__block {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-final__image {
+    height: 100%;
+    min-height: 400px;
+  }
+
+  .hero-final__cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-final__cta h2 {
+    text-align: left;
+    font-size: 28px;
+  }
+
+  .hero-final__cta p {
+    text-align: left;
+  }
+
+  .btn--final {
+    margin: 0;
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-final__cta h2 {
+    font-size: 32px;
+  }
+
+  .hero-final__image {
+    min-height: 500px;
+  }
+}
