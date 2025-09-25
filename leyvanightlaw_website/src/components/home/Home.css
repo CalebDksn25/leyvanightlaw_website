@@ -1,5 +1,5 @@
 .home {
-  background-color: #131313;
+  background-color: #121212;
   color: white;
   padding: 0;
 }
@@ -109,7 +109,7 @@
 /* Trust section */
 .trust {
   padding: 56px 0;
-  background: #0f0f0f;
+  background: #121212;
 }
 .trust h2 {
   margin: 0 0 8px;
@@ -237,7 +237,6 @@
 /* Info split section at bottom */
 .info-split {
   padding: 56px 0;
-  border-top: 1px solid #1a1a1a;
 }
 .info-split__title {
   text-align: center;
@@ -344,7 +343,7 @@
 .hero-final__bg {
   position: absolute;
   inset: 0;
-  background: #0f0f0f;
+  background: #121212;
 }
 
 .hero-final__gradient {

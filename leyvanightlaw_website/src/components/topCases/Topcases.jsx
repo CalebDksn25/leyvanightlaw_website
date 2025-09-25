@@ -12,39 +12,40 @@ const caseImages = [
     id: 1,
     title: "Workplace Injury Settlement",
     description:
-      "Successfully recovered $250,000 for construction worker injured on site",
+      "Successfully recieved $300,000 as a settlement for a workplace injury",
     image: settlement1,
-    alt: "Construction site workplace injury case",
+    alt: "Workplace injury settlement",
   },
   {
     id: 2,
-    title: "Medical Malpractice Victory",
-    description: "Obtained $180,000 settlement for medical negligence case",
+    title: "Medical Malpractice Settlement",
+    description:
+      "Obtained $3,500,000 settlement, and $600,000 medical expenses covered.",
     image: settlement2,
-    alt: "Medical malpractice case result",
+    alt: "Medical malpractice settlement",
   },
   {
     id: 3,
     title: "Car Accident Compensation",
-    description:
-      "Secured $320,000 for client injured in motor vehicle collision",
+    description: "Secured $212,500 as a settlement for a car accident",
     image: settlement3,
-    alt: "Car accident injury case",
+    alt: "Car accident settlement",
   },
   {
     id: 4,
-    title: "Workers' Comp Denial Appeal",
-    description: "Overturned denied claim and recovered $95,000 in benefits",
+    title: "Workers' Comp Denial Appeal Settlement",
+    description:
+      "Successfuly settled $375,000 as a result of a workers' comp denial appeal",
     image: settlement4,
-    alt: "Workers compensation appeal success",
+    alt: "Workers compensation appeal settlement",
   },
   {
     id: 5,
-    title: "Wrongful Termination Case",
+    title: "Wrongful Termination Settlement",
     description:
-      "Achieved $150,000 settlement for unlawfully terminated employee",
+      "Achieved $2,300,000 settlement for unlawfully terminated employee",
     image: settlement5,
-    alt: "Wrongful termination case victory",
+    alt: "Wrongful termination settlement",
   },
 ];
 
