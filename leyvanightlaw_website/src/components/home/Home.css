@@ -357,13 +357,13 @@
   align-items: center;
   justify-content: center;
   min-height: 70vh;
-  padding: 40px 0;
+  /*padding: 40px 0;*/
 }
 
 .hero-final__block {
   background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  /*box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);*/
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;

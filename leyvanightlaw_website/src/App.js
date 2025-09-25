@@ -7,7 +7,7 @@ import About from "../src/pages/about/About.jsx";
 import Contact from "../src/pages/contact/Contact.jsx";
 import Location from "../src/pages/location/Location.jsx";
 import Services from "../src/pages/services/Services.jsx";
-import Testimonials from "../src/pages/testimonials/Testimonials.jsx";
+import Testimonials from "./pages/testimonials/Testimonials.jsx";
 import Benifits from "../src/pages/benifits/Benifits.jsx";
 import "./App.css";
 

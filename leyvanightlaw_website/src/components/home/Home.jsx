@@ -218,7 +218,7 @@ const Home = () => {
             </div>
           </div>
           <div className="home-testimonials__panel">
-            <h2>Glendale Workers’ Compensation Lawyer</h2>
+            <h2>Leyva & Night - Injury Lawyers</h2>
             <p>
               Injuries at work can happen any time. It does not matter if they
               are the result of company negligence or by mistake, you could be

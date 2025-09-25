@@ -40,6 +40,8 @@ const Testimonials = () => {
         ))}
       </div>
 
+      <TopCases />
+
       <div className="upload-review-section">
         <div className="upload-review-content">
           <h2>Share Your Experience</h2>
@@ -53,8 +55,6 @@ const Testimonials = () => {
           </a>
         </div>
       </div>
-
-      <TopCases />
     </div>
   );
 };

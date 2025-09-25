@@ -1,4 +1,5 @@
 import "./Benifits.css";
+import { Link } from "react-router-dom";
 import athlete from "../../assets/athleteinj.png";
 import death from "../../assets/deathbenifits.png";
 import medicare from "../../assets/medicare.png";
@@ -56,9 +57,9 @@ const Benifits = () => {
     <div className="benefits-page">
       <div className="benefits-header">
         <h1>KNOW YOUR RIGHTS AND BENEFITS AVAILABLE TO INJURED WORKERS</h1>
-        <p>
+        {/*<p>
           Have you had one of the following rights violated? Contact us today.
-        </p>
+        </p>*/}
       </div>
 
       <div className="benefits-grid">
@@ -73,6 +74,20 @@ const Benifits = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="benefits-cta">
+        <div className="benefits-cta__card">
+          <h2>Have You Had Any of These Rights Violated?</h2>
+          <p>
+            If you believe any of your workers' compensation rights have been
+            violated, don't wait. Our experienced attorneys are here to help you
+            fight for the benefits you deserve.
+          </p>
+          <Link to="/contact" className="benefits-cta__button">
+            Contact Us Today
+          </Link>
+        </div>
       </div>
     </div>
   );
