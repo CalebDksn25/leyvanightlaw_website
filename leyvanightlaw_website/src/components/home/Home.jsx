@@ -1,6 +1,6 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import heroImage from "../../assets/leyva3.webp";
 import disClaims from "../../assets/disclaim.webp";
 import wrongTermination from "../../assets/wrongfulterm.webp";
@@ -13,6 +13,36 @@ import TopCases from "../topCases/Topcases";
 const Home = () => {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const touchStartXRef = useRef(null);
+  const [visibleSections, setVisibleSections] = useState(new Set());
+  const sectionRefs = useRef({});
+
+  // Scroll animation observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set([...prev, entry.target.id]));
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe all sections
+    Object.values(sectionRefs.current).forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const setSectionRef = (id) => (ref) => {
+    sectionRefs.current[id] = ref;
+  };
 
   const totalTestimonials = testimonialsData.length;
   const showPrev = () => {
@@ -65,7 +95,13 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="trust" aria-label="Why choose us">
+      <section
+        id="trust"
+        ref={setSectionRef("trust")}
+        className={`trust ${
+          visibleSections.has("trust") ? "animate-in" : "animate-out"
+        }`}
+        aria-label="Why choose us">
         <div className="container">
           <h2>Dedicated To Injured Workers</h2>
           <p className="trust__lead">
@@ -93,8 +129,12 @@ const Home = () => {
       </section>
 
       <section
-        className="practice"
-        aria-label="Workers’ compensation practice areas">
+        id="practice"
+        ref={setSectionRef("practice")}
+        className={`practice ${
+          visibleSections.has("practice") ? "animate-in" : "animate-out"
+        }`}
+        aria-label="Workers' compensation practice areas">
         <div className="container">
           <h2 className="practice__title">Workers’ Comp Practice Areas</h2>
           <div className="practice__grid">
@@ -146,7 +186,13 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="info-split" aria-label="We are here for you">
+      <section
+        id="info-split"
+        ref={setSectionRef("info-split")}
+        className={`info-split ${
+          visibleSections.has("info-split") ? "animate-in" : "animate-out"
+        }`}
+        aria-label="We are here for you">
         <div className="container">
           <h2 className="info-split__title">WE ARE HERE FOR YOU</h2>
           <div className="info-split__grid">
@@ -178,7 +224,15 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="home-testimonials" aria-label="Client testimonials">
+      <section
+        id="home-testimonials"
+        ref={setSectionRef("home-testimonials")}
+        className={`home-testimonials ${
+          visibleSections.has("home-testimonials")
+            ? "animate-in"
+            : "animate-out"
+        }`}
+        aria-label="Client testimonials">
         <div
           className="home-testimonials__bg"
           style={{ backgroundImage: `url(${heroAlt})` }}
@@ -239,7 +293,13 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="hero-final" aria-label="Final call to action">
+      <section
+        id="hero-final"
+        ref={setSectionRef("hero-final")}
+        className={`hero-final ${
+          visibleSections.has("hero-final") ? "animate-in" : "animate-out"
+        }`}
+        aria-label="Final call to action">
         <div className="hero-final__bg">
           <div className="hero-final__gradient hero-final__gradient--left"></div>
           <div className="hero-final__gradient hero-final__gradient--right"></div>
@@ -272,7 +332,13 @@ const Home = () => {
 
       <TopCases />
 
-      <section className="values" aria-label="Our values and approach">
+      <section
+        id="values"
+        ref={setSectionRef("values")}
+        className={`values ${
+          visibleSections.has("values") ? "animate-in" : "animate-out"
+        }`}
+        aria-label="Our values and approach">
         <div className="container">
           <div className="values__grid">
             <div className="values__column">
@@ -309,7 +375,13 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="locations" aria-label="Office locations">
+      <section
+        id="locations"
+        ref={setSectionRef("locations")}
+        className={`locations ${
+          visibleSections.has("locations") ? "animate-in" : "animate-out"
+        }`}
+        aria-label="Office locations">
         <div className="container">
           <div className="locations__header">
             <h2>Our Locations</h2>

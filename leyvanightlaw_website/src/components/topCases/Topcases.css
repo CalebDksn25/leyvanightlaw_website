@@ -4,6 +4,30 @@
   background: #121212;
 }
 
+/* Animation classes */
+.top-cases.animate-out {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.top-cases.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) rotateY(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+  }
+}
+
 .top-cases__header {
   text-align: center;
   margin-bottom: 40px;

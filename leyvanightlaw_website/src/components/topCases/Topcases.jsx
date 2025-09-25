@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Topcases.css";
 import { Link } from "react-router-dom";
 import settlement1 from "../../assets/settlement1.webp";
@@ -52,6 +52,31 @@ const caseImages = [
 const TopCases = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  // Intersection Observer for animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   // Auto-advance slideshow
   useEffect(() => {
@@ -90,7 +115,10 @@ const TopCases = () => {
   };
 
   return (
-    <section className="top-cases" aria-label="Top case results">
+    <section
+      ref={sectionRef}
+      className={`top-cases ${isVisible ? "animate-in" : "animate-out"}`}
+      aria-label="Top case results">
       <div className="container">
         <div className="top-cases__header">
           <h2>Our Top Case Results</h2>
