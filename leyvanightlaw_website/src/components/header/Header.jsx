@@ -7,7 +7,9 @@ const Header = () => {
     <header className="header">
       <div className="left-section">
         <div className="logo-section">
-          <img src={Logo} alt="Leyva Night Law Logo" className="logo" />
+          <Link to="/" className="logo-link">
+            <img src={Logo} alt="Leyva Night Law Logo" className="logo" />
+          </Link>
         </div>
         <div className="spanish-section">
           <h1 className="spanish-text">SE HABLA ESPAÑOL: (323) 278-7000</h1>

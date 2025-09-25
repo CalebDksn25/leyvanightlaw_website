@@ -38,9 +38,23 @@
   align-items: center;
 }
 
+.logo-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
 .logo {
   height: 75px;
   width: auto;
+}
+
+.logo:hover {
+  transition: height 0.3s ease, width 0.3s ease;
+  height: 80px;
+  width: auto;
+  cursor: pointer;
 }
 
 .nav-section {

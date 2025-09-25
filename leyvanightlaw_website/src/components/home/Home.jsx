@@ -96,7 +96,7 @@ const Home = () => {
         className="practice"
         aria-label="Workers’ compensation practice areas">
         <div className="container">
-          <h2>Workers’ Comp Practice Areas</h2>
+          <h2 className="practice__title">Workers’ Comp Practice Areas</h2>
           <div className="practice__grid">
             <Link
               to="/services"
@@ -271,6 +271,108 @@ const Home = () => {
       </section>
 
       <TopCases />
+
+      <section className="values" aria-label="Our values and approach">
+        <div className="container">
+          <div className="values__grid">
+            <div className="values__column">
+              <h3>Law You Can Understand</h3>
+              <p>
+                We know that legal action can sometimes be overwhelming. We are
+                dedicated to providing you help in language that you best
+                understand, not lawyer talk. If you don't feel like you
+                understand your options, we will be happy to provide with an
+                assessment that you can understand.
+              </p>
+            </div>
+            <div className="values__column">
+              <h3>A Focus on Results</h3>
+              <p>
+                The first step for our lawyers is to work with you and come up
+                with the best plan to get the results for you. Through our
+                understanding of the law and your understanding of the
+                circumstances, we will craft a path to success. Call us when you
+                need a Workers' Compensation Lawyers in Montebello.
+              </p>
+            </div>
+            <div className="values__column">
+              <h3>Get Started Today</h3>
+              <p>
+                Don't wait! Contact us for a free phone consultation if you or
+                someone you know was involved in a car accident or work injury.
+                Let us help you figure out what your next best steps are. The
+                sooner you have a plan of action, the better your chances of
+                taking the correct steps to get the results you want.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="locations" aria-label="Office locations">
+        <div className="container">
+          <div className="locations__header">
+            <h2>Our Locations</h2>
+            <p>Visit us at one of our convenient office locations</p>
+          </div>
+
+          <div className="locations__grid">
+            <div className="location-card">
+              <div className="location-card-header">
+                <h3 className="office-name">Beverly Blvd Office</h3>
+              </div>
+              <div className="office-details">
+                <div className="office-address">
+                  <span>2632 W. Beverly Blvd, Montebello, CA 90640</span>
+                </div>
+                <div className="office-meta">
+                  <div className="office-phone">(323) 278-7000</div>
+                  <div className="office-hours">Mon–Fri: 9:00 AM – 5:00 PM</div>
+                </div>
+              </div>
+              <div className="office-actions">
+                <a href="tel:3232787000" className="btn btn-primary">
+                  Call Office
+                </a>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=2632+W+Beverly+Blvd+Montebello+CA+90640"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary">
+                  Directions
+                </a>
+              </div>
+            </div>
+
+            <div className="location-card">
+              <div className="location-card-header">
+                <h3 className="office-name">Santa Ana Office</h3>
+              </div>
+              <div className="office-details">
+                <div className="office-address">
+                  <span>1043 W. Civic Ctr. Dr, #200, Santa Ana, CA 92703</span>
+                </div>
+                <div className="office-meta">
+                  <div className="office-phone">(714) 565-2760</div>
+                  <div className="office-hours">Mon–Fri: 9:00 AM – 5:00 PM</div>
+                </div>
+              </div>
+              <div className="office-actions">
+                <a href="tel:7145652760" className="btn btn-primary">
+                  Call Office
+                </a>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=1043+W+Civic+Ctr+Dr+Santa+Ana+CA+92703"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary">
+                  Directions
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };

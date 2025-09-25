@@ -7,9 +7,10 @@
 .footer__container {
   width: min(1100px, 92%);
   margin: 0 auto;
-  display: grid;
-  gap: 16px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .footer__brand {
@@ -44,9 +45,10 @@
 }
 
 .footer__contact {
-  display: grid;
-  gap: 6px;
-  justify-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
 }
 .footer__phone {
   color: #fff;
@@ -56,13 +58,40 @@
 .footer__phone:hover {
   text-decoration: underline;
 }
+
+.footer__instagram {
+  color: #e7cb86;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+.footer__instagram:hover {
+  color: #caa24e;
+}
+.footer__instagram svg {
+  width: 20px;
+  height: 20px;
+}
 .footer__copy {
   color: #bdbdbd;
   font-size: 13px;
 }
 
-@media (min-width: 820px) {
+@media (max-width: 768px) {
   .footer__container {
-    grid-template-columns: 1fr auto auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .footer__brand {
+    justify-items: center;
+  }
+
+  .footer__contact {
+    align-items: center;
   }
 }
