@@ -1,6 +1,7 @@
 import React from "react";
 import "./Testimonials.css";
 import { testimonials } from "./data";
+import TopCases from "../../components/topCases/Topcases";
 
 const Testimonials = () => {
   // Using shared testimonials data from ./data
@@ -52,6 +53,8 @@ const Testimonials = () => {
           </a>
         </div>
       </div>
+
+      <TopCases />
     </div>
   );
 };

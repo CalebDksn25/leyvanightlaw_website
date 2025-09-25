@@ -362,7 +362,7 @@
 }
 
 .hero-final__block {
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -386,21 +386,21 @@
 
 .hero-final__cta {
   padding: 40px;
-  color: #333;
+  color: #ffffff;
 }
 
 .hero-final__cta h2 {
   margin: 0 0 20px;
   font-size: 32px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #ffffff;
   line-height: 1.2;
   text-align: center;
 }
 
 .hero-final__cta p {
   margin: 0 0 30px;
-  color: #555;
+  color: #f2f2f2;
   line-height: 1.6;
   font-size: 16px;
   text-align: center;
@@ -408,8 +408,8 @@
 
 .btn--final {
   background: transparent;
-  color: #007bff;
-  border: 2px solid #007bff;
+  color: #e7cb86;
+  border: 2px solid #e7cb86;
   padding: 14px 28px;
   font-weight: 600;
   text-transform: uppercase;
@@ -420,7 +420,7 @@
 }
 
 .btn--final:hover {
-  background: #007bff;
+  background: #e7cb86;
   color: #fff;
 }
 

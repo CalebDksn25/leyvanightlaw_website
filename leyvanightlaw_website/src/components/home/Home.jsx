@@ -8,6 +8,7 @@ import imgHarassment from "../../assets/workplace2.webp";
 import heroAlt from "../../assets/leyva4.webp";
 import { testimonials as testimonialsData } from "../../pages/testimonials/data";
 import leyvaLogo from "../../assets/leyvalogo2.jpg";
+import TopCases from "../topCases/Topcases";
 
 const Home = () => {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
@@ -268,6 +269,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <TopCases />
     </main>
   );
 };
