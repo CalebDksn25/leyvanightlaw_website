@@ -5,6 +5,68 @@
   padding: 2rem 1rem;
 }
 
+/* Animation classes */
+.animate-out {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Staggered animations for different sections */
+.contact-header.animate-in {
+  animation: slideInFromLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.contact-form-container.animate-in {
+  animation: flipIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Keyframe animations */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) rotateY(-15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+  }
+}
+
+@keyframes flipIn {
+  0% {
+    opacity: 0;
+    transform: rotateY(-90deg) scale(0.85);
+  }
+  25% {
+    opacity: 0.3;
+    transform: rotateY(-67deg) scale(0.9);
+  }
+  50% {
+    opacity: 0.6;
+    transform: rotateY(-33deg) scale(0.95);
+  }
+  75% {
+    opacity: 0.8;
+    transform: rotateY(-11deg) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
 .contact-header {
   text-align: center;
   margin-bottom: 3rem;

@@ -1,9 +1,40 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./Testimonials.css";
 import { testimonials } from "./data";
 import TopCases from "../../components/topCases/Topcases";
 
 const Testimonials = () => {
+  const [visibleSections, setVisibleSections] = useState(new Set());
+  const sectionRefs = useRef({});
+
+  // Scroll animation observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set([...prev, entry.target.id]));
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe all sections
+    Object.values(sectionRefs.current).forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const setSectionRef = (id) => (ref) => {
+    sectionRefs.current[id] = ref;
+  };
+
   // Using shared testimonials data from ./data
 
   // Configuration for the upload review link - you can change this URL
@@ -20,12 +51,26 @@ const Testimonials = () => {
 
   return (
     <div className="testimonials-page">
-      <div className="testimonials-header">
+      <div
+        id="testimonials-header"
+        ref={setSectionRef("testimonials-header")}
+        className={`testimonials-header ${
+          visibleSections.has("testimonials-header")
+            ? "animate-in"
+            : "animate-out"
+        }`}>
         <h1>Client Testimonials</h1>
         <p>Read what our clients say about Leyva Night Law</p>
       </div>
 
-      <div className="testimonials-grid">
+      <div
+        id="testimonials-grid"
+        ref={setSectionRef("testimonials-grid")}
+        className={`testimonials-grid ${
+          visibleSections.has("testimonials-grid")
+            ? "animate-in"
+            : "animate-out"
+        }`}>
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className="testimonial-card">
             <div className="testimonial-header">
@@ -42,7 +87,12 @@ const Testimonials = () => {
 
       <TopCases />
 
-      <div className="upload-review-section">
+      <div
+        id="upload-review"
+        ref={setSectionRef("upload-review")}
+        className={`upload-review-section ${
+          visibleSections.has("upload-review") ? "animate-in" : "animate-out"
+        }`}>
         <div className="upload-review-content">
           <h2>Share Your Experience</h2>
           <p>Help others by sharing your experience with Leyva Night Law</p>

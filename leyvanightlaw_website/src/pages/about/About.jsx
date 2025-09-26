@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Michael from "../../assets/michaelleyvapic.webp";
 import StockLawyer from "../../assets/stocklawyer1.webp";
 import lawLogo from "../../assets/leyvanightlawlogo.webp";
@@ -6,6 +6,36 @@ import "./About.css";
 
 const About = () => {
   const [expandedCard, setExpandedCard] = useState(null);
+  const [visibleSections, setVisibleSections] = useState(new Set());
+  const sectionRefs = useRef({});
+
+  // Scroll animation observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set([...prev, entry.target.id]));
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe all sections
+    Object.values(sectionRefs.current).forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const setSectionRef = (id) => (ref) => {
+    sectionRefs.current[id] = ref;
+  };
 
   const toggleCard = (cardIndex) => {
     setExpandedCard(expandedCard === cardIndex ? null : cardIndex);
@@ -49,7 +79,12 @@ const About = () => {
       <h1>Our Team Workers' compensation and personal injury team</h1>
       {/* <p className="about-intro">Learn more about Leyva Night Law.</p> */}
 
-      <div className="team-cards-container">
+      <div
+        id="team-cards"
+        ref={setSectionRef("team-cards")}
+        className={`team-cards-container ${
+          visibleSections.has("team-cards") ? "animate-in" : "animate-out"
+        }`}>
         {teamMembers.map((member, index) => (
           <div key={member.id} className="team-card">
             <div className="card-image">
@@ -74,7 +109,12 @@ const About = () => {
       </div>
 
       {/* Practice Areas Section */}
-      <div className="practice-areas-section">
+      <div
+        id="practice-areas"
+        ref={setSectionRef("practice-areas")}
+        className={`practice-areas-section ${
+          visibleSections.has("practice-areas") ? "animate-in" : "animate-out"
+        }`}>
         <h2>Practice Areas</h2>
         <div className="practice-areas-grid">
           <div className="practice-area-item">Workers' Compensation</div>
@@ -89,7 +129,12 @@ const About = () => {
       </div>
 
       {/* Side-by-side sections */}
-      <div className="side-by-side-sections">
+      <div
+        id="side-by-side"
+        ref={setSectionRef("side-by-side")}
+        className={`side-by-side-sections ${
+          visibleSections.has("side-by-side") ? "animate-in" : "animate-out"
+        }`}>
         {/* Our Approach Section */}
         <div className="our-approach-section">
           <h2 className="our-approach-section-title">Our Approach</h2>
@@ -113,7 +158,12 @@ const About = () => {
       </div>
 
       {/* Legacy of Success Section */}
-      <div className="legacy-section">
+      <div
+        id="legacy"
+        ref={setSectionRef("legacy")}
+        className={`legacy-section ${
+          visibleSections.has("legacy") ? "animate-in" : "animate-out"
+        }`}>
         <h2>Legacy of Success</h2>
         <p>
           Leyva & Night, APC has been working together for over 30 years and has

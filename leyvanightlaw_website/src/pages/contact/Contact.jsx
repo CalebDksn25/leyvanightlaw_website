@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Contact.css";
 
 const Contact = () => {
@@ -13,6 +13,36 @@ const Contact = () => {
 
   const [errors, setErrors] = useState({});
   const [submitStatus, setSubmitStatus] = useState("idle");
+  const [visibleSections, setVisibleSections] = useState(new Set());
+  const sectionRefs = useRef({});
+
+  // Scroll animation observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set([...prev, entry.target.id]));
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe all sections
+    Object.values(sectionRefs.current).forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const setSectionRef = (id) => (ref) => {
+    sectionRefs.current[id] = ref;
+  };
 
   const services = [
     "Workers' Compensation",
@@ -123,13 +153,23 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
-      <div className="contact-header">
+      <div
+        id="contact-header"
+        ref={setSectionRef("contact-header")}
+        className={`contact-header ${
+          visibleSections.has("contact-header") ? "animate-in" : "animate-out"
+        }`}>
         <h1>Contact Us</h1>
         <p>Get in touch with Leyva Night Law for a free consultation.</p>
         <p className="phone-number">Phone: (323) 278-7000</p>
       </div>
 
-      <div className="contact-form-container">
+      <div
+        id="contact-form"
+        ref={setSectionRef("contact-form")}
+        className={`contact-form-container ${
+          visibleSections.has("contact-form") ? "animate-in" : "animate-out"
+        }`}>
         <form className="contact-form" onSubmit={handleSubmit} noValidate>
           <div className="form-group">
             <label htmlFor="name">Name *</label>

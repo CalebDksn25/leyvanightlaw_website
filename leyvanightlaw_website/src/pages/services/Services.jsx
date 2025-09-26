@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Services.css";
 import workerscomp from "../../assets/workerscomp.jpg";
@@ -9,6 +9,37 @@ import carcrash from "../../assets/carcrash.jpg";
 import wrongfulterm from "../../assets/wrongfulterm.webp";
 
 const Services = () => {
+  const [visibleSections, setVisibleSections] = useState(new Set());
+  const sectionRefs = useRef({});
+
+  // Scroll animation observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set([...prev, entry.target.id]));
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe all sections
+    Object.values(sectionRefs.current).forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const setSectionRef = (id) => (ref) => {
+    sectionRefs.current[id] = ref;
+  };
+
   const services = [
     {
       id: 1,
@@ -56,12 +87,24 @@ const Services = () => {
 
   return (
     <div className="services-page">
-      <h1>Our Services</h1>
-      <p className="services-intro">
-        Discover the legal services offered by Leyva Night Law.
-      </p>
+      <div
+        id="services-header"
+        ref={setSectionRef("services-header")}
+        className={`services-header ${
+          visibleSections.has("services-header") ? "animate-in" : "animate-out"
+        }`}>
+        <h1>Our Services</h1>
+        <p className="services-intro">
+          Discover the legal services offered by Leyva Night Law.
+        </p>
+      </div>
 
-      <div className="services-grid">
+      <div
+        id="services-grid"
+        ref={setSectionRef("services-grid")}
+        className={`services-grid ${
+          visibleSections.has("services-grid") ? "animate-in" : "animate-out"
+        }`}>
         {services.map((service) => (
           <div key={service.id} className="service-card">
             <h3 className="service-type">{service.serviceType}</h3>

@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./Location.css";
 
 const Location = () => {
+  const [visibleSections, setVisibleSections] = useState(new Set());
+  const sectionRefs = useRef({});
+
+  // Scroll animation observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set([...prev, entry.target.id]));
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe all sections
+    Object.values(sectionRefs.current).forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const setSectionRef = (id) => (ref) => {
+    sectionRefs.current[id] = ref;
+  };
+
   const offices = [
     {
       id: 1,
@@ -47,12 +78,22 @@ const Location = () => {
 
   return (
     <div className="location-page">
-      <div className="location-header">
+      <div
+        id="location-header"
+        ref={setSectionRef("location-header")}
+        className={`location-header ${
+          visibleSections.has("location-header") ? "animate-in" : "animate-out"
+        }`}>
         <h1>Our Locations</h1>
         <p>Find Leyva Night Law offices near you</p>
       </div>
 
-      <div className="locations-grid">
+      <div
+        id="locations-grid"
+        ref={setSectionRef("locations-grid")}
+        className={`locations-grid ${
+          visibleSections.has("locations-grid") ? "animate-in" : "animate-out"
+        }`}>
         {offices.map((office) => (
           <div key={office.id} className="location-card">
             <div className="location-card-header">
