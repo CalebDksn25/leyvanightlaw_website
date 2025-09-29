@@ -90,3 +90,113 @@
   background-color: rgba(255, 255, 255, 0.1);
   color: #f0f0f0;
 }
+
+/* Burger + panel styles */
+.menu-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column; /* stack bars vertically */
+  cursor: pointer;
+}
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  transition: transform 0.25s ease, opacity 0.2s ease, width 0.2s ease;
+}
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  width: 22px;
+}
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  width: 22px;
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0 0 0 35%;
+  background: rgba(18, 18, 18, 0.98);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+.mobile-menu.show {
+  transform: translateX(0%);
+}
+.mobile-nav-links {
+  list-style: none;
+  margin: 80px 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.mobile-nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+.mobile-nav-links a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.mobile-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #3a3a3a;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 1570px) {
+  .spanish-text {
+    display: grid;
+    grid-auto-flow: row;
+    line-height: 1.1;
+    gap: 4px;
+    font-size: 18px;
+  }
+  .spanish-line {
+    display: block;
+    white-space: nowrap;
+  }
+  .spanish-phone {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    font-size: 14px;
+  }
+}
+
+/* Switch to burger menu at 1310px */
+@media (max-width: 1310px) {
+  .nav-section {
+    display: none;
+  }
+  .menu-toggle {
+    display: inline-flex;
+  }
+}
