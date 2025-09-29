@@ -828,4 +828,21 @@ html {
     max-width: 100%;
     box-sizing: border-box;
   }
+
+  /* Ensure primary buttons on the home page center and never overflow */
+  .home .btn--primary {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .btn--ghost {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
 }
