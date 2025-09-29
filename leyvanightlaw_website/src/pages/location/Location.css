@@ -4,6 +4,8 @@
   background-color: #121212;
   min-height: 100vh;
   padding: 40px 20px;
+  width: min(1400px, 92%);
+  margin: 0 auto;
 }
 
 /* Animation classes */
@@ -76,8 +78,9 @@ html {
 
 /* Grid */
 .locations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -93,6 +96,9 @@ html {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .location-card::before {
@@ -142,6 +148,20 @@ html {
   margin-top: 1.25rem;
 }
 
+/* Map container */
+.location-map {
+  margin-top: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #333333;
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 420px;
+  display: block;
+}
+
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -179,19 +199,8 @@ html {
   .location-header h1 {
     font-size: 32px;
   }
-
-  .locations-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* On large screens, ensure 3 columns and center the 4th card on row 2 */
 @media (min-width: 1100px) {
-  .locations-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .location-card:nth-child(4) {
-    grid-column: 2;
-  }
 }

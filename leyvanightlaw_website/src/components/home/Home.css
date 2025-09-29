@@ -724,11 +724,17 @@ html {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text for nested elements */
 }
 
 .office-address span {
   display: block;
   font-size: 16px;
+}
+
+.office-address {
+  text-align: center; /* Ensure address lines are centered */
 }
 
 .office-meta {
@@ -737,12 +743,14 @@ html {
   gap: 16px;
   font-size: 14px;
   color: #bdbdbd;
+  justify-content: center; /* Center meta items */
 }
 
 .office-actions {
   display: flex;
   gap: 12px;
   margin-top: 20px;
+  justify-content: center; /* Center action buttons */
 }
 
 .btn {

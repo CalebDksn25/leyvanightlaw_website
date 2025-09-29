@@ -37,42 +37,12 @@ const Location = () => {
     {
       id: 1,
       name: "Beverly Blvd Office",
-      //addressLine1: "2632 W. Beverly Blvd",
+      addressLine1: "",
       addressLine2: "2632 W. Beverly Blvd, Montebello, CA 90640",
       phone: "(323) 278-7000",
       hours: "Mon–Fri: 9:00 AM – 5:00 PM",
       mapsLink:
-        "https://www.google.com/maps/search/?api=1&query=1234+Wilshire+Blvd+Suite+500+Los+Angeles+CA+90017",
-    },
-    {
-      id: 2,
-      name: "Santa Ana Office",
-      //addressLine1: "1043 W. Civic Ctr. Dr, Suite 200",
-      addressLine2: "1043 W. Civic Ctr. Dr, #200, Santa Ana, CA 92703",
-      phone: "(714) 565-2760",
-      hours: "Mon–Fri: 9:00 AM – 5:00 PM",
-      mapsLink:
-        "https://www.google.com/maps/search/?api=1&query=5678+Main+St+Suite+210+Santa+Ana+CA+92701",
-    },
-    {
-      id: 3,
-      name: "Riverside Office",
-      addressLine1: "Riverside, CA 92501",
-      addressLine2: "",
-      phone: "(951) 689-8000",
-      hours: "Mon–Fri: 9:00 AM – 5:00 PM",
-      mapsLink:
-        "https://www.google.com/maps/search/?api=1&query=3456+Market+St+Suite+300+Riverside+CA+92501",
-    },
-    {
-      id: 4,
-      name: "Hollywood Office",
-      addressLine1: "North Hollywood, CA 91602",
-      addressLine2: "",
-      phone: "(818) 755-5040",
-      hours: "Mon–Fri: 9:00 AM – 5:00 PM",
-      mapsLink:
-        "https://www.google.com/maps/search/?api=1&query=7890+Beverly+Blvd+Suite+120+Montebello+CA+90640",
+        "https://www.google.com/maps/search/?api=1&query=2632+W+Beverly+Blvd+Montebello+CA+90640",
     },
   ];
 
@@ -122,6 +92,18 @@ const Location = () => {
                 className="btn btn-secondary">
                 Directions
               </a>
+            </div>
+
+            {/* Embedded Google Map */}
+            <div className="location-map">
+              <iframe
+                title="Leyva & Night APC - Montebello Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.8735283042674!2d-118.132733623153!3d34.021457173168585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2cfc8e2f2c44b%3A0x17d359ced30b1d3a!2sLeyva%20%26%20Night%2C%20APC!5e0!3m2!1sen!2sus!4v1759156947369!5m2!1sen!2sus"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         ))}

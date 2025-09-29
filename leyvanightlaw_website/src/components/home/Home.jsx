@@ -415,33 +415,6 @@ const Home = () => {
                 </a>
               </div>
             </div>
-
-            <div className="location-card">
-              <div className="location-card-header">
-                <h3 className="office-name">Santa Ana Office</h3>
-              </div>
-              <div className="office-details">
-                <div className="office-address">
-                  <span>1043 W. Civic Ctr. Dr, #200, Santa Ana, CA 92703</span>
-                </div>
-                <div className="office-meta">
-                  <div className="office-phone">(714) 565-2760</div>
-                  <div className="office-hours">Mon–Fri: 9:00 AM – 5:00 PM</div>
-                </div>
-              </div>
-              <div className="office-actions">
-                <a href="tel:7145652760" className="btn btn-primary">
-                  Call Office
-                </a>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=1043+W+Civic+Ctr+Dr+Santa+Ana+CA+92703"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary">
-                  Directions
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
