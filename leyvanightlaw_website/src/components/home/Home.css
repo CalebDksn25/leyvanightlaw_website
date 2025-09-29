@@ -397,6 +397,11 @@ html {
   position: relative;
   padding: 56px 0;
 }
+
+/* Ensure visual spacing to the next hero section */
+.home-testimonials + .hero-final {
+  margin-top: 40px;
+}
 .home-testimonials__bg {
   position: absolute;
   inset: 0;
@@ -684,6 +689,7 @@ html {
   gap: 24px;
   max-width: 800px;
   margin: 0 auto;
+  justify-items: center; /* Center items inside the grid tracks */
 }
 
 .location-card {
@@ -694,6 +700,9 @@ html {
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 620px; /* Keep card within mobile viewport */
+  box-sizing: border-box;
 }
 
 .location-card::before {
@@ -797,9 +806,26 @@ html {
   .office-actions {
     flex-direction: column;
     gap: 8px;
+    width: 100%;
   }
 
   .btn {
     text-align: center;
+  }
+
+  /* Tighten padding on small screens so card fits comfortably */
+  .location-card {
+    padding: 18px;
+    max-width: 92vw; /* Ensure fits within small mobile screens */
+  }
+
+  /* Make buttons full-width so they don't overflow */
+  .location-card .btn,
+  .location-card .btn-primary,
+  .location-card .btn-secondary {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
