@@ -142,13 +142,8 @@ const Contact = () => {
           ? formData.customSubject
           : formData.subject;
 
-      // Use API route for both development and production
-      const apiUrl =
-        process.env.NODE_ENV === "development"
-          ? "http://localhost:3001/api/contact"
-          : "/api/contact";
-
-      const response = await fetch(apiUrl, {
+      // Use API route
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
