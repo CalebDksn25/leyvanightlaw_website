@@ -24,7 +24,7 @@ export default async function handler(req, res) {
 
     const result = await resend.emails.send({
       from: email,
-      to: ["calebdksn@gmail.com"],
+      to: ["caleb.n.dickson@gmail.com"],
       reply_to: email,
       subject: `NEW FORM SUBMISSION: ${subject || serviceType || "New Message"}`,
       html: htmlContent,
