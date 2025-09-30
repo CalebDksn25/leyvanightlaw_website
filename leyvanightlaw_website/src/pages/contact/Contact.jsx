@@ -259,9 +259,7 @@ const Contact = () => {
 
           {submitStatus === "not_configured" && (
             <div className="notice not-configured">
-              Email sending is not yet configured. Share your preferred service
-              (Formspree, EmailJS, or backend endpoint), and I will wire this
-              up.
+              Currently under maintenance. Please check back later.
             </div>
           )}
 
