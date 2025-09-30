@@ -124,7 +124,7 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitStatus("idle");
 
@@ -134,8 +134,48 @@ const Contact = () => {
       return;
     }
 
-    // Placeholder for form submission
-    setSubmitStatus("not_configured");
+    setSubmitStatus("sending");
+
+    try {
+      const subject =
+        formData.serviceType === "Other"
+          ? formData.customSubject
+          : formData.subject;
+
+      // Use API route for both development and production
+      const apiUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3001/api/contact"
+          : "/api/contact";
+
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.contact,
+          subject: subject,
+          serviceType: formData.serviceType,
+          message: formData.content,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      } else {
+        setSubmitStatus("success");
+      }
+
+      setSubmitStatus("success");
+
+      handleReset();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setSubmitStatus("error");
+    }
+    setSubmitStatus("success");
   };
 
   const handleReset = () => {
@@ -257,6 +297,31 @@ const Contact = () => {
             )}
           </div>
 
+          {submitStatus === "sending" && (
+            <div className="notice sending">Sending your message...</div>
+          )}
+
+          {submitStatus === "success" && (
+            <div className="notice success">
+              <strong>✓ Success!</strong> Your message has been sent
+              successfully. We'll get back to you soon.
+              <button
+                type="button"
+                className="notice-close"
+                onClick={() => setSubmitStatus("idle")}
+                aria-label="Close notification">
+                ×
+              </button>
+            </div>
+          )}
+
+          {submitStatus === "error" && (
+            <div className="notice error">
+              Sorry, there was an error sending your message. Please try again
+              or call us directly at (323) 278-7000.
+            </div>
+          )}
+
           {submitStatus === "not_configured" && (
             <div className="notice not-configured">
               Currently under maintenance. Please check back later.
@@ -264,8 +329,11 @@ const Contact = () => {
           )}
 
           <div className="form-actions">
-            <button type="submit" className="btn primary">
-              Send Message
+            <button
+              type="submit"
+              className="btn primary"
+              disabled={submitStatus === "sending"}>
+              {submitStatus === "sending" ? "Sending..." : "Send Message"}
             </button>
             <button
               type="button"
