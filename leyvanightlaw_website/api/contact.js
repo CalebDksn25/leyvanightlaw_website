@@ -34,14 +34,14 @@ export default async function handler(req, res) {
 
     await resend.batch.send([
       {
-        from: "onboarding@resend.dev",
+        from: "Law Firm <noreply@leyvanightlaw.com>",
         to: ["calebdksn@gmail.com"],
         reply_to: email,
         subject: `NEW FORM SUBMISSION: ${subject || serviceType || "New Message"}`,
         html: htmlContent,
       },
       {
-        from: "onboarding@resend.dev",
+        from: "Law Firm <noreply@leyvanightlaw.com>",
         to: ["caleb.n.dickson@gmail.com"],
         reply_to: email,
         subject: `NEW FORM SUBMISSION: ${subject || serviceType || "New Message"}`,
