@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Michael from "../../assets/michaelleyvapic.webp";
 import StockLawyer from "../../assets/stocklawyer1.webp";
-import lawLogo from "../../assets/leyvanightlawlogo.webp";
+import allan from "../../assets/stocklawyerallan.jpg";
 import "./About.css";
 
 const About = () => {
@@ -48,12 +48,22 @@ const About = () => {
       title: "Senior Partner",
       image: Michael, // Fixed: removed the curly braces
       shortDescription:
-        "Michael L. Leyva is a partner and founding member of LEYVA & NIGHT, APC, with law offices in Los Angeles, Orange and Riverside Counties.",
+        "Michael L. Leyva is a partner and founding member of LEYVA & NIGHT, APC, with law offices in Los Angeles, Orange and Riverside Counties. He practices in the area of Workers’ Compensation and Personal Injury law representing seriously injured persons throughout the state of California.",
       fullDescription:
         "Michael L. Leyva is a partner and founding member of LEYVA & NIGHT, APC, with law offices in Los Angeles, Orange and Riverside Counties. He practices in the area of Workers’ Compensation and Personal Injury law representing seriously injured persons throughout the state of California. He has worked extensively with cases dealing with various types of catastrophic injuries, including head injuries, toxic exposure, automobile collisions and injuries at construction sites. Mr. Leyva has written and lectured on legal topics dealing primarily with Workers’ Compensation rights. The State Bar of California recognizes him as a Certified Specialist. He earned his Juris Doctor degree from Creighton University in Omaha, Nebraska and his Bachelor of Arts from the California State University in Los Angeles. Mr. Leyva is now in his 30th year of private practice with Leyva and Night, APC where he has represented thousands of satisfied clients.",
     },
     {
       id: 2,
+      name: "Allan S. Night, Esq.",
+      title: "Senior Partner",
+      image: allan,
+      shortDescription:
+        "Allan S. Night is a partner and founding member of LEYVA & NIGHT, APC, with law offices in Los Angeles, Orange and Riverside Counties. Allan manages the day to day practices of LEYVA & NIGHT, APC in the areas of Workers’ Compensation and Personal Injury law representing seriously injured persons throughout the State of California.",
+      fullDescription:
+        "Allan S. Night is a partner and founding member of LEYVA & NIGHT, APC, with law offices in Los Angeles, Orange and Riverside Counties. Allan manages the day to day practices of LEYVA & NIGHT, APC in the areas of Workers’ Compensation and Personal Injury law representing seriously injured persons throughout the State of California. Allan Night has also worked extensively with cases dealing with a variety of catastrophic injuries, including head injuries, toxic exposure, automobile collisions and injuries at construction sites.  Mr. Night is a proud Texas Longhorn earning his Bachelor of Science degree from the University of Texas in Austin.  He also earned a Juris Doctor degree from the prestigious University of Houston Law Center.  Mr. Night  is now in his 33rd year of private practice with Leyva and Night, APC where he has represented thousands of satisfied clients who proudly refer their friends and family members with any legal question.",
+    },
+    {
+      id: 3,
       name: "Sanford Baddin, Esq.",
       title: "Personal Injury Attorney",
       image: StockLawyer,
@@ -61,16 +71,6 @@ const About = () => {
         "Sanford S. Baddin has been a litigation attorney in the Southern California area for many years whose practice has emphasized automobile collision and other type accidents where there has been injuries due to someone else's  negligent behavior.",
       fullDescription:
         "Sanford S. Baddin has been a litigation attorney in the Southern California area for many years whose practice has emphasized automobile collision and other type accidents where there has been injuries due to someone else's  negligent behavior . He worked for many years for the best insurance companies before becoming a plaintiff's attorney.  This has given him unique experience on both sides of a personal injury claim. He knows best how insurance companies evaluate claims and as the result creates strategies for collecting the maximum amounts for his clients.",
-    },
-    {
-      id: 3,
-      name: "Our Paralegals",
-      title: "Legal Consultant",
-      image: lawLogo,
-      shortDescription:
-        "Our experienced legal assistants will guide you each step of the way to make insure that you are provided with the best medical care to bring you back to health and produce the best reward for your pain and suffering.",
-      fullDescription:
-        "Our experienced legal assistants will guide you each step of the way to make insure that you are provided with the best medical care to bring you back to health and produce the best reward for your pain and suffering. Rosa is bringing her personal injury and workers' compensation experience to our office in Montebello as well as AnnMarie and Elvia. In our Santa Ana office you will have the pleasure to be helped by Carmen who has been working for the law offices of Leyva & Night, APC for over 13 years.",
     },
   ];
 
