@@ -22,6 +22,7 @@ export default async function handler(req, res) {
       <p>${message.replace(/\n/g, "<br>")}</p>
     `;
 
+    /*
     const result = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: ["caleb.n.dickson@gmail.com"],
@@ -29,23 +30,24 @@ export default async function handler(req, res) {
       subject: `NEW FORM SUBMISSION: ${subject || serviceType || "New Message"}`,
       html: htmlContent,
     });
+    */
 
-    /*await resend.batch.send([
+    await resend.batch.send([
       {
-        from: email,
+        from: "onboarding@resend.dev",
         to: ["calebdksn@gmail.com"],
         reply_to: email,
         subject: `NEW FORM SUBMISSION: ${subject || serviceType || "New Message"}`,
         html: htmlContent,
       },
       {
-        from: email,
+        from: "onboarding@resend.dev",
         to: ["caleb.n.dickson@gmail.com"],
         reply_to: email,
         subject: `NEW FORM SUBMISSION: ${subject || serviceType || "New Message"}`,
         html: htmlContent,
       },
-    ]);*/
+    ]);
 
     return res.status(200).json({ id: result.id });
   } catch (err) {
