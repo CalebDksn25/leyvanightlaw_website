@@ -11,51 +11,16 @@
 /* Animation classes */
 .animate-out {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .animate-in {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Staggered animations for different sections */
-.location-header.animate-in {
-  animation: slideInFromLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.locations-grid.animate-in {
-  animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Keyframe animations */
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px) rotateY(-15deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotateY(0deg);
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px) rotateY(15deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotateY(0deg);
-  }
-}
-
-/* Smooth scrolling for the entire page */
-html {
-  scroll-behavior: smooth;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .location-header {
@@ -112,8 +77,8 @@ html {
 }
 
 .location-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
 }
 
 .office-name {

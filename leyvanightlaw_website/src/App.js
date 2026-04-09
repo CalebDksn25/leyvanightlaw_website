@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "../src/components/home/Home.jsx";
 import Header from "../src/components/header/Header.jsx";
 import Footer from "../src/components/footer/Footer.jsx";
@@ -11,9 +11,18 @@ import Testimonials from "./pages/testimonials/Testimonials.jsx";
 import Benifits from "../src/pages/benifits/Benifits.jsx";
 import "./App.css";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

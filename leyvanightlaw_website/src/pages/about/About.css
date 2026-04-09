@@ -9,60 +9,44 @@
 /* Animation classes */
 .animate-out {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .animate-in {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Staggered animations for different sections */
-.team-cards-container.animate-in {
-  animation: slideInFromLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.practice-areas-section.animate-in {
-  animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+/* Staggered card reveals */
+.team-cards-container.animate-in .team-card {
+  opacity: 0;
+  animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+.team-cards-container.animate-in .team-card:nth-child(1) { animation-delay: 0.05s; }
+.team-cards-container.animate-in .team-card:nth-child(2) { animation-delay: 0.15s; }
+.team-cards-container.animate-in .team-card:nth-child(3) { animation-delay: 0.25s; }
 
-.side-by-side-sections.animate-in {
-  animation: slideInFromLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.practice-areas-section.animate-in .practice-area-item {
+  opacity: 0;
+  animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
-.legacy-section.animate-in {
-  animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Keyframe animations */
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px) rotateY(-15deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotateY(0deg);
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px) rotateY(15deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotateY(0deg);
-  }
-}
-
-/* Smooth scrolling for the entire page */
-html {
-  scroll-behavior: smooth;
-}
+.practice-areas-section.animate-in .practice-area-item:nth-child(1) { animation-delay: 0s; }
+.practice-areas-section.animate-in .practice-area-item:nth-child(2) { animation-delay: 0.06s; }
+.practice-areas-section.animate-in .practice-area-item:nth-child(3) { animation-delay: 0.12s; }
+.practice-areas-section.animate-in .practice-area-item:nth-child(4) { animation-delay: 0.18s; }
+.practice-areas-section.animate-in .practice-area-item:nth-child(5) { animation-delay: 0.24s; }
+.practice-areas-section.animate-in .practice-area-item:nth-child(6) { animation-delay: 0.30s; }
+.practice-areas-section.animate-in .practice-area-item:nth-child(7) { animation-delay: 0.36s; }
+.practice-areas-section.animate-in .practice-area-item:nth-child(8) { animation-delay: 0.42s; }
 
 .about-page h1 {
   color: #ffffff;
@@ -110,8 +94,8 @@ html {
 }
 
 .team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
 }
 
 .card-image {

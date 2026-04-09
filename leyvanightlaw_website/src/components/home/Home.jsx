@@ -243,6 +243,41 @@ const Home = () => {
       </section>
 
       <section
+        id="videos"
+        ref={setSectionRef("videos")}
+        className={`videos ${
+          visibleSections.has("videos") ? "animate-in" : "animate-out"
+        }`}
+        aria-label="Firm videos">
+        <div className="container">
+          <h2 className="videos__title">See Us in Action</h2>
+          <p className="videos__subtitle">
+            Learn more about our firm and how we fight for you
+          </p>
+          <div className="videos__grid">
+            <div className="videos__item">
+              <iframe
+                src="https://www.youtube.com/embed/rVUYwzqSlek"
+                title="Leyva &amp; Night APC - Firm Overview"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+            <div className="videos__item">
+              <iframe
+                src="https://www.youtube.com/embed/fOy7Z1fII_E"
+                title="Leyva &amp; Night APC - Client Stories"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
         id="home-testimonials"
         ref={setSectionRef("home-testimonials")}
         className={`home-testimonials ${
@@ -258,6 +293,7 @@ const Home = () => {
         <div className="container home-testimonials__inner">
           <div className="home-testimonials__content">
             <blockquote
+              key={testimonialIndex}
               className="home-testimonials__quote"
               onTouchStart={onTouchStart}
               onTouchEnd={onTouchEnd}
@@ -266,7 +302,7 @@ const Home = () => {
                 if (e.key === "ArrowLeft") showPrev();
                 if (e.key === "ArrowRight") showNext();
               }}>
-              “{testimonialsData[testimonialIndex]?.text}”
+              "{testimonialsData[testimonialIndex]?.text}"
               <footer className="home-testimonials__footer">
                 — {testimonialsData[testimonialIndex]?.name}
               </footer>

@@ -9,56 +9,34 @@
 /* Animation classes */
 .animate-out {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .animate-in {
   opacity: 1;
   transform: translateY(0);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Staggered animations for different sections */
-.benefits-header.animate-in {
-  animation: slideInFromLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.benefits-grid.animate-in {
-  animation: slideInFromRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+/* Staggered benefit card reveals */
+.benefits-grid.animate-in .benefit-card {
+  opacity: 0;
+  animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
-.benefits-cta.animate-in {
-  animation: slideInFromLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Keyframe animations */
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px) rotateY(-15deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotateY(0deg);
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px) rotateY(15deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotateY(0deg);
-  }
-}
-
-/* Smooth scrolling for the entire page */
-html {
-  scroll-behavior: smooth;
-}
+.benefits-grid.animate-in .benefit-card:nth-child(1) { animation-delay: 0.05s; }
+.benefits-grid.animate-in .benefit-card:nth-child(2) { animation-delay: 0.12s; }
+.benefits-grid.animate-in .benefit-card:nth-child(3) { animation-delay: 0.19s; }
+.benefits-grid.animate-in .benefit-card:nth-child(4) { animation-delay: 0.26s; }
+.benefits-grid.animate-in .benefit-card:nth-child(5) { animation-delay: 0.33s; }
+.benefits-grid.animate-in .benefit-card:nth-child(6) { animation-delay: 0.40s; }
 
 .benefits-header {
   text-align: center;
@@ -96,8 +74,8 @@ html {
 }
 
 .benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
 }
 
 .benefit-image-wrap {
