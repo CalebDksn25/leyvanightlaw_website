@@ -258,6 +258,7 @@ const Home = () => {
         <div className="container home-testimonials__inner">
           <div className="home-testimonials__content">
             <blockquote
+              key={testimonialIndex}
               className="home-testimonials__quote"
               onTouchStart={onTouchStart}
               onTouchEnd={onTouchEnd}
@@ -266,7 +267,7 @@ const Home = () => {
                 if (e.key === "ArrowLeft") showPrev();
                 if (e.key === "ArrowRight") showNext();
               }}>
-              “{testimonialsData[testimonialIndex]?.text}”
+              "{testimonialsData[testimonialIndex]?.text}"
               <footer className="home-testimonials__footer">
                 — {testimonialsData[testimonialIndex]?.name}
               </footer>
