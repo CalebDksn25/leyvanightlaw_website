@@ -243,6 +243,41 @@ const Home = () => {
       </section>
 
       <section
+        id="videos"
+        ref={setSectionRef("videos")}
+        className={`videos ${
+          visibleSections.has("videos") ? "animate-in" : "animate-out"
+        }`}
+        aria-label="Firm videos">
+        <div className="container">
+          <h2 className="videos__title">See Us in Action</h2>
+          <p className="videos__subtitle">
+            Learn more about our firm and how we fight for you
+          </p>
+          <div className="videos__grid">
+            <div className="videos__item">
+              <iframe
+                src="https://www.youtube.com/embed/rVUYwzqSlek"
+                title="Leyva &amp; Night APC - Firm Overview"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+            <div className="videos__item">
+              <iframe
+                src="https://www.youtube.com/embed/fOy7Z1fII_E"
+                title="Leyva &amp; Night APC - Client Stories"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
         id="home-testimonials"
         ref={setSectionRef("home-testimonials")}
         className={`home-testimonials ${
