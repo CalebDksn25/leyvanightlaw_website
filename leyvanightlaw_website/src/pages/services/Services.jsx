@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SEO from "../../components/SEO";
 import "./Services.css";
 import workerscomp from "../../assets/workerscomp.jpg";
 import injury from "../../assets/personalinjury.jpg";
@@ -87,6 +88,34 @@ const Services = () => {
 
   return (
     <div className="services-page">
+      <SEO
+        title="Legal Services — Workers' Comp, Personal Injury & More"
+        description="Leyva & Night APC offers workers' compensation, personal injury, workplace harassment, wrongful death, auto accident, and wrongful termination legal services in Los Angeles. Free consultations available."
+        path="/services"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.leyvanightlaw.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.leyvanightlaw.com/services" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Legal Services",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Workers' Compensation", "url": "https://www.leyvanightlaw.com/services" },
+              { "@type": "ListItem", "position": 2, "name": "Personal Injury", "url": "https://www.leyvanightlaw.com/services" },
+              { "@type": "ListItem", "position": 3, "name": "Workplace Harassment", "url": "https://www.leyvanightlaw.com/services" },
+              { "@type": "ListItem", "position": 4, "name": "Wrongful Death", "url": "https://www.leyvanightlaw.com/services" },
+              { "@type": "ListItem", "position": 5, "name": "Auto Accidents", "url": "https://www.leyvanightlaw.com/services" },
+              { "@type": "ListItem", "position": 6, "name": "Wrongful Termination", "url": "https://www.leyvanightlaw.com/services" }
+            ]
+          }
+        ]}
+      />
       <div
         id="services-header"
         ref={setSectionRef("services-header")}

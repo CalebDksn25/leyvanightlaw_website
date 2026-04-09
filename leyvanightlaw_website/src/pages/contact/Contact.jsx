@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import SEO from "../../components/SEO";
 import "./Contact.css";
 
 const Contact = () => {
@@ -188,6 +189,30 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
+      <SEO
+        title="Contact Us — Free Legal Consultation"
+        description="Contact Leyva & Night APC for a free workers' compensation or personal injury consultation. Call (323) 278-7000 or fill out our contact form. Se habla Español. Montebello, CA office."
+        path="/contact"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Leyva & Night APC",
+          "description": "Get a free legal consultation for workers' compensation, personal injury, and employment law matters.",
+          "mainEntity": {
+            "@type": "LegalService",
+            "name": "Leyva & Night APC",
+            "telephone": "+1-323-278-7000",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "2632 W. Beverly Blvd",
+              "addressLocality": "Montebello",
+              "addressRegion": "CA",
+              "postalCode": "90640",
+              "addressCountry": "US"
+            }
+          }
+        }}
+      />
       <div
         id="contact-header"
         ref={setSectionRef("contact-header")}
