@@ -4,39 +4,204 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/leyvaicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#1a1a2e" />
+
+    <!-- Primary Meta Tags -->
+    <title>Leyva & Night APC | Workers' Compensation Attorneys in Los Angeles</title>
     <meta
       name="description"
-      content="Web site created using create-react-app" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/leyvaicon.ico" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+      content="Leyva & Night APC — experienced workers' compensation and personal injury attorneys in Los Angeles. Over 30 years of results. Free consultations. Se habla Español. Call (323) 278-7000."
+    />
+    <meta name="keywords" content="workers compensation attorney Los Angeles, personal injury lawyer Montebello, work injury attorney California, workers comp lawyer near me, workplace harassment attorney, wrongful termination lawyer LA, auto accident attorney Los Angeles, wrongful death lawyer California, Leyva Night Law, abogado de compensacion laboral" />
+    <meta name="author" content="Leyva & Night APC" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.leyvanightlaw.com/" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Leyva & Night Law</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.leyvanightlaw.com/" />
+    <meta property="og:title" content="Leyva & Night APC | Workers' Compensation Attorneys in Los Angeles" />
+    <meta property="og:description" content="Experienced workers' compensation and personal injury attorneys serving Los Angeles. Over 30 years of results. Free consultations. Se habla Español." />
+    <meta property="og:image" content="https://www.leyvanightlaw.com/leyvanightlawlogo.webp" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Leyva & Night APC" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Leyva & Night APC | Workers' Compensation Attorneys in Los Angeles" />
+    <meta name="twitter:description" content="Experienced workers' compensation and personal injury attorneys serving Los Angeles. Over 30 years of results. Free consultations. Se habla Español." />
+    <meta name="twitter:image" content="https://www.leyvanightlaw.com/leyvanightlawlogo.webp" />
+
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="US-CA" />
+    <meta name="geo.placename" content="Montebello" />
+    <meta name="geo.position" content="34.0215;-118.1327" />
+    <meta name="ICBM" content="34.0215, -118.1327" />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/leyvaicon.ico" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- JSON-LD Structured Data: LocalBusiness + LegalService -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LegalService", "Attorney"],
+      "name": "Leyva & Night APC",
+      "alternateName": "Leyva Night Law",
+      "description": "Experienced workers' compensation and personal injury law firm serving Los Angeles County. Over 30 years of combined legal experience.",
+      "url": "https://www.leyvanightlaw.com",
+      "logo": "https://www.leyvanightlaw.com/leyvanightlawlogo.webp",
+      "image": "https://www.leyvanightlaw.com/leyvanightlawlogo.webp",
+      "telephone": "+1-323-278-7000",
+      "email": "leyvanightapc323@gmail.com",
+      "priceRange": "Free Consultation",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Contingency Fee",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2632 W. Beverly Blvd",
+        "addressLocality": "Montebello",
+        "addressRegion": "CA",
+        "postalCode": "90640",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.0215,
+        "longitude": -118.1327
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Los Angeles"
+        },
+        {
+          "@type": "City",
+          "name": "Montebello"
+        },
+        {
+          "@type": "State",
+          "name": "California"
+        }
+      ],
+      "knowsLanguage": ["en", "es"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Legal Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Workers' Compensation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Personal Injury"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Workplace Harassment"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wrongful Death"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Auto Accidents"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wrongful Termination"
+            }
+          }
+        ]
+      },
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Michael L. Leyva",
+          "jobTitle": "Senior Partner",
+          "description": "Certified Specialist by the State Bar of California with over 30 years of experience in Workers' Compensation and Personal Injury law."
+        },
+        {
+          "@type": "Person",
+          "name": "Allan S. Night",
+          "jobTitle": "Senior Partner",
+          "description": "Over 33 years of private practice experience in Workers' Compensation and Personal Injury law."
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "6",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "sameAs": [
+        "https://www.instagram.com/leyva_night_apc_law/",
+        "https://www.yelp.com/biz/0PZ0QI8cIShIGz_mI2IT4g"
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Leyva & Night APC",
+      "url": "https://www.leyvanightlaw.com",
+      "logo": "https://www.leyvanightlaw.com/leyvanightlawlogo.webp",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-323-278-7000",
+        "contactType": "customer service",
+        "areaServed": "US",
+        "availableLanguage": ["English", "Spanish"]
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: WebSite with SearchAction potential -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Leyva & Night APC",
+      "url": "https://www.leyvanightlaw.com"
+    }
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <h1>Leyva & Night APC - Workers' Compensation Attorneys</h1>
+      <p>Experienced workers' compensation and personal injury attorneys in Los Angeles. Call (323) 278-7000 for a free consultation.</p>
+      <p>Services: Workers' Compensation, Personal Injury, Workplace Harassment, Wrongful Death, Auto Accidents, Wrongful Termination</p>
+      <p>Location: 2632 W. Beverly Blvd, Montebello, CA 90640</p>
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

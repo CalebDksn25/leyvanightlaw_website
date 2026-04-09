@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import SEO from "../../components/SEO";
 import "./Testimonials.css";
 import { testimonials } from "./data";
 import TopCases from "../../components/topCases/Topcases";
@@ -51,6 +52,35 @@ const Testimonials = () => {
 
   return (
     <div className="testimonials-page">
+      <SEO
+        title="Client Testimonials & Reviews"
+        description="Read what clients say about Leyva & Night APC. 5-star reviews from satisfied workers' compensation and personal injury clients in Los Angeles. See why thousands trust our attorneys."
+        path="/testimonials"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "LegalService",
+          "name": "Leyva & Night APC",
+          "url": "https://www.leyvanightlaw.com",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "6",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": testimonials.map((t) => ({
+            "@type": "Review",
+            "author": { "@type": "Person", "name": t.name },
+            "datePublished": t.date,
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": t.rating,
+              "bestRating": 5
+            },
+            "reviewBody": t.text
+          }))
+        }}
+      />
       <div
         id="testimonials-header"
         ref={setSectionRef("testimonials-header")}

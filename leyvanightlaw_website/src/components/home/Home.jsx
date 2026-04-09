@@ -1,6 +1,7 @@
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
+import SEO from "../SEO";
 import heroImage from "../../assets/leyva3.webp";
 import disClaims from "../../assets/disclaim.webp";
 import wrongTermination from "../../assets/wrongfulterm.webp";
@@ -70,6 +71,23 @@ const Home = () => {
   };
   return (
     <main className="home" role="main">
+      <SEO
+        title="Workers' Compensation & Personal Injury Attorneys in Los Angeles"
+        description="Leyva & Night APC — trusted workers' compensation and personal injury attorneys in Los Angeles with over 30 years of experience. Free case evaluations. No fees unless we win. Se habla Español. Call (323) 278-7000."
+        path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.leyvanightlaw.com/"
+            }
+          ]
+        }}
+      />
       <section className="hero" aria-label="Firm hero">
         <img
           className="hero__image"

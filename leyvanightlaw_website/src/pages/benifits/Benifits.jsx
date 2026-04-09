@@ -1,6 +1,7 @@
 import "./Benifits.css";
 import { Link } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
+import SEO from "../../components/SEO";
 import athlete from "../../assets/athleteinj.png";
 import death from "../../assets/deathbenifits.png";
 import medicare from "../../assets/medicare.png";
@@ -87,6 +88,19 @@ const Benifits = () => {
 
   return (
     <div className="benefits-page">
+      <SEO
+        title="Workers' Compensation Benefits — Know Your Rights"
+        description="Learn about workers' compensation benefits available to injured workers in California: medical care, temporary disability, permanent disability, supplemental job displacement, athlete injuries, and death benefits. Leyva & Night APC — (323) 278-7000."
+        path="/benefits"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.leyvanightlaw.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Benefits", "item": "https://www.leyvanightlaw.com/benefits" }
+          ]
+        }}
+      />
       <div
         id="benefits-header"
         ref={setSectionRef("benefits-header")}

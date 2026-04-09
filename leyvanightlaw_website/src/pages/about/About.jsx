@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import SEO from "../../components/SEO";
 import Michael from "../../assets/michaelleyvapic.webp";
 import StockLawyer from "../../assets/stocklawyer1.webp";
 import allan from "../../assets/stocklawyerallan.jpg";
@@ -76,6 +77,59 @@ const About = () => {
 
   return (
     <div className="about-page">
+      <SEO
+        title="About Our Attorneys — Workers' Compensation Lawyers"
+        description="Meet the experienced attorneys at Leyva & Night APC. Michael Leyva (30+ years) and Allan Night (33+ years) are certified workers' compensation specialists serving Los Angeles, Orange, and Riverside Counties."
+        path="/about"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.leyvanightlaw.com/" },
+              { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.leyvanightlaw.com/about" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About Leyva & Night APC",
+            "description": "Meet our experienced workers' compensation and personal injury attorneys serving Los Angeles County.",
+            "mainEntity": {
+              "@type": "LegalService",
+              "name": "Leyva & Night APC",
+              "employee": [
+                {
+                  "@type": "Person",
+                  "name": "Michael L. Leyva",
+                  "jobTitle": "Senior Partner",
+                  "description": "Certified Specialist by the State Bar of California. Over 30 years of experience in Workers' Compensation and Personal Injury law.",
+                  "alumniOf": [
+                    { "@type": "CollegeOrUniversity", "name": "Creighton University" },
+                    { "@type": "CollegeOrUniversity", "name": "California State University, Los Angeles" }
+                  ]
+                },
+                {
+                  "@type": "Person",
+                  "name": "Allan S. Night",
+                  "jobTitle": "Senior Partner",
+                  "description": "Over 33 years of private practice experience in Workers' Compensation and Personal Injury law.",
+                  "alumniOf": [
+                    { "@type": "CollegeOrUniversity", "name": "University of Houston Law Center" },
+                    { "@type": "CollegeOrUniversity", "name": "University of Texas at Austin" }
+                  ]
+                },
+                {
+                  "@type": "Person",
+                  "name": "Sanford S. Baddin",
+                  "jobTitle": "Personal Injury Attorney",
+                  "description": "Litigation attorney specializing in automobile collision and accident cases in Southern California."
+                }
+              ]
+            }
+          }
+        ]}
+      />
       <h1>Our Team Workers' compensation and personal injury team</h1>
       {/* <p className="about-intro">Learn more about Leyva Night Law.</p> */}
 

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import SEO from "../../components/SEO";
 import "./Location.css";
 
 const Location = () => {
@@ -48,6 +49,37 @@ const Location = () => {
 
   return (
     <div className="location-page">
+      <SEO
+        title="Office Location — Montebello, CA"
+        description="Visit Leyva & Night APC at 2632 W. Beverly Blvd, Montebello, CA 90640. Open Mon-Fri 9 AM - 5 PM. Workers' compensation and personal injury attorneys serving Los Angeles County. Call (323) 278-7000."
+        path="/locations"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "LegalService",
+          "name": "Leyva & Night APC — Beverly Blvd Office",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2632 W. Beverly Blvd",
+            "addressLocality": "Montebello",
+            "addressRegion": "CA",
+            "postalCode": "90640",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.0215,
+            "longitude": -118.1327
+          },
+          "telephone": "+1-323-278-7000",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "17:00"
+          },
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=2632+W+Beverly+Blvd+Montebello+CA+90640"
+        }}
+      />
       <div
         id="location-header"
         ref={setSectionRef("location-header")}
